@@ -2,6 +2,7 @@ package com.javabasics.ThreadPool;
 
 /**
  * 线程的单独实现方式
+ * @function  用于执行异步任务
  * @author asiancary
  */
 public class SingleThread {
@@ -85,7 +86,7 @@ public class SingleThread {
         singleThread.longTimeTask();
         singleThread.longTimeTask0();
         singleThread.longTimeTask1();
-        singleThread.longTimeTask2();
-        singleThread.longTimeTask3();
+        singleThread.longTimeTask2();//start()开启了一个新线程，在新线程调用方法
+        singleThread.longTimeTask3();//在主线程调用run()方法，未开启主线程
     }
 }
