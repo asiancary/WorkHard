@@ -1,5 +1,12 @@
 package com.javabasics.callback;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 /**
  * @name 回调类
  * @fuction 被调用类，通过调用接口传递计算结果
@@ -18,7 +25,10 @@ public class Student {
      */
     public void computeNumber(int x, int y, String computeWay, ComputeCallBack computeCallBack){
 
+
         /*运算线程，可计算加法和乘法*/
+        //TODO
+        //FIXME
       new Thread(new Runnable() {
           @Override
           public void run() {
@@ -42,6 +52,31 @@ public class Student {
           }
       }).start();
 
+
+      //使用lambda表达式
+        new Thread(()->{
+
+        }).start();
+
+
+        //使用线程池
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 2, 3000L, TimeUnit.MICROSECONDS, new LinkedBlockingQueue<Runnable>());
+        threadPoolExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+
+
+        //使用可命名的线程
+        ThreadFactory threadFactory = new ThreadFactory() {
+            @Override
+            public Thread newThread(Runnable r) {
+                //TODO: 计算操作
+                return null;
+            }
+        };
 
     }
 }

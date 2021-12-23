@@ -1,5 +1,11 @@
 package com.javabasics.callback;
 
+/**
+ * @name 入口类
+ * @fuction 回调方式2
+ * @author asiancary
+ * @date 2021-12-23
+ */
 public class Teacher2 implements ComputeCallBack{
 
     /**
